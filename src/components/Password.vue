@@ -6,7 +6,8 @@
           Hidden Password
         </p>
         <input type="text" id="userPassword" @keyup="checkPassword" autocomplete="off">
-        <p class="how-modal" @click="showHowToFindPassword">How to find Password</p>
+        <!-- Change the text to a button -->
+        <button class="how-modal-button" @click="showHowToFindPassword">How to find Password</button>
         <!-- Modal -->
         <div class="modal" v-if="showModal">
           <span class="close" @click="closeModal">&times;</span>
