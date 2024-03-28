@@ -5,10 +5,8 @@
         <p>
           Hidden Password
         </p>
-        <div id="textBox">
-          <input type="text" id="userPassword" @keyup="checkPassword" autocomplete="off">
-          <button class="how-modal-button" @click="showHowToFindPassword">How to find Password</button>
-        </div>
+        <input type="text" id="userPassword" @keyup="checkPassword" autocomplete="off">
+        <button class="how-modal-button" @click="showHowToFindPassword">How to find Password</button>
         <div class="modal" v-if="showModal">
           <span class="close" @click="closeModal">&times;</span>
           <video class="modal-video" autoplay muted loop>
