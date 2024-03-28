@@ -11,7 +11,7 @@
         <!-- Modal -->
         <div class="modal" v-if="showModal">
           <span class="close" @click="closeModal">&times;</span>
-          <video class="modal-video" autoplay muted onended="hidePreloader()">
+          <video class="modal-video" autoplay muted loop>
           <source src="./how.mp4" type="video/mp4">
               Your browser does not support the video tag.
           </video>
