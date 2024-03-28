@@ -12,7 +12,7 @@
         <div class="modal" v-if="showModal">
           <span class="close" @click="closeModal">&times;</span>
           <video class="modal-video" autoplay muted loop>
-          <source src="./how.mp4" type="video/mp4">
+            <source :src="require('../assets/video/how.mp4')" type="video/mp4">
               Your browser does not support the video tag.
           </video>
           <p class="modal-text">Text explaining how to find the password goes here.</p>
