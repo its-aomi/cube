@@ -1,54 +1,73 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    
-    <!-- FavIcon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
-    <link rel="manifest" href="./favicon/site.webmanifest">
-    <link rel="mask-icon" href="./favicon/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#da532c">
-    
-    <title>Puzzlium</title>
-  </head>
-  <body>
-    <div id="app"></div>
-  </body>
-  <style>  
-    ::-moz-selection {
-      color: rgb(44, 44, 44);
-      background: rgb(236, 236, 236);
-    }
-    ::selection {
-      color: rgb(44, 44, 44);
-      background-color: rgb(236, 236, 236);
-    }
-    body
-    {
-      margin: 0px;
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  
+  <!-- FavIcon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
+  <link rel="manifest" href="./favicon/site.webmanifest">
+  <link rel="mask-icon" href="./favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  
+  <title>Puzzlium</title>
+  
+  <style>
+    body {
+      margin: 0;
       overflow: hidden;
       font-family: arial, sans-serif;
     }
-    #app
-    {
+    #app {
       position: relative;
       overflow: hidden;
       background-color: #1a1a1a;  
-
       min-height: 100vh;
       color: #1a1a1a; 
     }
-    *{
+    * {
       box-sizing: border-box;
     }
-    a
-    {
+    a {
       text-decoration: none;
       color: #1a1a1a;    
     }
+    .preloader-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 9999;
+      background-color: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .preloader-video {
+      width: 100%;
+      height: 100%;
+    }
   </style>
+</head>
+<body>
+  <div class="preloader-container">
+    <video class="preloader-video" autoplay muted loop>
+      <source src="https://res.cloudinary.com/dqdou72co/video/upload/q_auto,f_auto/46E267AE-91D9-4737-A37F-48CE2FD8BC1A_ovhim7.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+  <div id="app"></div>
+  
+  <script>
+    // Once your page loads, remove the preloader
+    window.addEventListener('load', function() {
+      var preloader = document.querySelector('.preloader-container');
+      preloader.style.display = 'none';
+    });
+  </script>
+</body>
 </html>
