@@ -6,6 +6,13 @@
           Hidden Password
         </p>
         <input type="text" id="userPassword" @keyup="checkPassword" autocomplete="off">
+        <p class="how-modal" @click="showHowToFindPassword">How to find Password</p>
+        <!-- Modal -->
+        <div class="modal" v-if="showModal">
+          <span class="close" @click="closeModal">&times;</span>
+          <img src="your-gif-path.gif" alt="How to find Password" class="modal-img">
+          <p class="modal-text">Text explaining how to find the password goes here.</p>
+        </div>
       </div>
     </div>
     <div id="ui">
@@ -60,7 +67,8 @@ export default {
       list: require('../assets/textList.json')['list'],
       password: "",
       World: null,
-      displayGame: false
+      displayGame: false,
+      showModal: false // Track modal visibility
     }
   },
   methods: {
@@ -85,6 +93,14 @@ export default {
           this.isLock = false
         }, 500)
       }
+    },
+    // Method to show modal
+    showHowToFindPassword() {
+      this.showModal = true;
+    },
+    // Method to close modal
+    closeModal() {
+      this.showModal = false;
     }
   },
   mounted() {
@@ -99,6 +115,7 @@ export default {
   },
 }
 </script>
+
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
@@ -304,4 +321,48 @@ export default {
     font-size: 3vw;
   }
 }
+
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 9999; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
+  }
+
+  .modal-img {
+    display: block;
+    margin: 0 auto;
+    max-width: 80%; /* Adjust as needed */
+    max-height: 50vh; /* Adjust as needed */
+    margin-top: 20px; /* Adjust as needed */
+  }
+
+  .modal-text {
+    text-align: center;
+    color: white;
+    margin-top: 20px;
+  }
+
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: #ccc;
+    text-decoration: none;
+    cursor: pointer;
+  }
 </style>
