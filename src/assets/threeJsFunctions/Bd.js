@@ -19,7 +19,7 @@ export default class BD{
     this.audioList = [
       {
         lookAt: [-1.65, 1.05, 2],
-        audio: new Audio(require("../BD/audio/test.mp3")),
+        audio: new Audio(require("../BD/audio/1.mp3")),
         zoom: 6
       },
       {
