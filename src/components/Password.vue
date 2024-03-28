@@ -5,8 +5,10 @@
         <p>
           Hidden Password
         </p>
+        <div id="textBox">
         <input type="text" id="userPassword" @keyup="checkPassword" autocomplete="off">
         <button class="how-modal-button" @click="showHowToFindPassword">How to find Password</button>
+        </div>
         <div class="modal" v-if="showModal">
           <span class="close" @click="closeModal">&times;</span>
           <video class="modal-video" autoplay muted loop>
@@ -349,8 +351,8 @@ export default {
   .modal-text {
     text-align: center;
     color: white;
-	  font-size: 17px !important;
-	  margin-top: 20px !important;
+	  font-size: 17px;
+	  margin-top: 20px;
   }
 
   .close {
