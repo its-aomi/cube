@@ -5,17 +5,17 @@
         <p>
           Hidden Password
         </p>
+        <div>
         <input type="text" id="userPassword" @keyup="checkPassword" autocomplete="off">
-        <!-- Change the text to a button -->
         <button class="how-modal-button" @click="showHowToFindPassword">How to find Password</button>
-        <!-- Modal -->
+        </div>
         <div class="modal" v-if="showModal">
           <span class="close" @click="closeModal">&times;</span>
           <video class="modal-video" autoplay muted loop>
             <source :src="require('../assets/video/how.mp4')" type="video/mp4">
               Your browser does not support the video tag.
           </video>
-          <p class="modal-text">Text explaining how to find the password goes here.</p>
+          <p class="modal-text">Move the cursor / finger throughout the screen to find the password.</p>
         </div>
       </div>
     </div>
@@ -345,13 +345,14 @@ export default {
     margin: 0 auto;
     max-width: 80%; /* Adjust as needed */
     max-height: 50vh; /* Adjust as needed */
-    margin-top: 20px; /* Adjust as needed */
+    margin-top: 200px; /* Adjust as needed */
   }
 
   .modal-text {
     text-align: center;
     color: white;
-    margin-top: 20px;
+	  font-size: 17px !important;
+	  margin-top: 20px !important;
   }
 
   .close {
