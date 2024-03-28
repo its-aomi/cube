@@ -55,7 +55,7 @@
 </head>
 <body>
   <div class="preloader-container">
-    <video class="preloader-video" autoplay muted loop>
+    <video class="preloader-video" autoplay muted onended="hidePreloader()">
       <source src="https://res.cloudinary.com/dqdou72co/video/upload/q_auto,f_auto/46E267AE-91D9-4737-A37F-48CE2FD8BC1A_ovhim7.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
@@ -63,10 +63,15 @@
   <div id="app"></div>
   
   <script>
-    // Once your page loads, remove the preloader
-    window.addEventListener('load', function() {
+    // Function to hide preloader
+    function hidePreloader() {
       var preloader = document.querySelector('.preloader-container');
       preloader.style.display = 'none';
+    }
+
+    // Event listener to hide preloader once the page is loaded
+    window.addEventListener('load', function() {
+      hidePreloader();
     });
   </script>
 </body>
