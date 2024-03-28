@@ -61,22 +61,22 @@ import { generatePassword } from '../assets/password.js'
 
 export default {
   name: 'Password',
-  data(){
+  data() {
     return {
       isLock: true,
       list: require('../assets/textList.json')['list'],
       password: "",
       World: null,
       displayGame: false,
-      showModal: false // Track modal visibility
+      showModal: false // Add showModal property to control modal visibility
     }
   },
   methods: {
-    checkPassword(){
+    checkPassword() {
       const value = document.getElementById('userPassword').value
       const passwordBox = document.getElementById('passwordBox')
 
-      if(value === this.password){
+      if (value === this.password) {
         passwordBox.style.opacity = 0
 
         this.World.Password.dispose()
@@ -84,8 +84,8 @@ export default {
         this.World.Navigator.openNavigation()
 
         this.World.renderCloudHole = false
-        
-        setTimeout(() => {          
+
+        setTimeout(() => {
           this.World.renderNavigation = true
         }, 3000)
 
@@ -94,7 +94,7 @@ export default {
         }, 500)
       }
     },
-    // Method to show modal
+    // Method to toggle modal visibility
     showHowToFindPassword() {
       this.showModal = true;
     },
@@ -108,13 +108,14 @@ export default {
 
     this.World = new World()
     const local = this
-    function openGame(){
+    function openGame() {
       local.displayGame = true
     }
     this.World.Navigator.navList[4].callBack = openGame
   },
 }
 </script>
+
 
 
 <style scoped>
