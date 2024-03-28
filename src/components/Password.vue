@@ -11,7 +11,10 @@
         <!-- Modal -->
         <div class="modal" v-if="showModal">
           <span class="close" @click="closeModal">&times;</span>
-          <img src="your-gif-path.gif" alt="How to find Password" class="modal-img">
+          <video class="modal-video" autoplay muted onended="hidePreloader()">
+          <source src="./how.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+          </video>
           <p class="modal-text">Text explaining how to find the password goes here.</p>
         </div>
       </div>
@@ -327,7 +330,6 @@ export default {
 
 
 .modal {
-    display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 9999; /* Sit on top */
     left: 0;
@@ -338,7 +340,7 @@ export default {
     background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
   }
 
-  .modal-img {
+  .modal-video {
     display: block;
     margin: 0 auto;
     max-width: 80%; /* Adjust as needed */
