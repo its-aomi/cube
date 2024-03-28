@@ -11,7 +11,7 @@
             autocomplete="off"
           />
           <button class="how-modal-button" @click="showHowToFindPassword">
-            How to find Password
+            How to find Password?
           </button>
         </div>
         <div class="modal" v-if="showModal">
@@ -326,22 +326,22 @@ export default {
 }
 
 .modal {
-  position: fixed; /* Stay in place */
-  z-index: 9999; /* Sit on top */
+  position: fixed;
+  z-index: 9999;
   left: 0;
   top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgba(0, 0, 0, 0.6); /* Black w/ opacity */
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
 .modal-video {
   display: block;
   margin: 0 auto;
-  max-width: 80%; /* Adjust as needed */
-  max-height: 50vh; /* Adjust as needed */
-  margin-top: 200px; /* Adjust as needed */
+  max-width: 80%;
+  max-height: 50vh;
+  margin-top: 150px;
 }
 
 .modal-text {
@@ -366,5 +366,15 @@ export default {
   color: #ccc;
   text-decoration: none;
   cursor: pointer;
+}
+
+.how-modal-button {
+	background: #0000;
+	color: #fff;
+	cursor: pointer;
+}
+
+#textBox {
+	display: grid;
 }
 </style>
