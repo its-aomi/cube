@@ -5,7 +5,7 @@
         <p>
           Hidden Password
         </p>
-        <div>
+        <div id="textBox">
         <input type="text" id="userPassword" @keyup="checkPassword" autocomplete="off">
         <button class="how-modal-button" @click="showHowToFindPassword">How to find Password</button>
         </div>
