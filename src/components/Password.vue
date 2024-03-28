@@ -97,7 +97,7 @@ export default {
     },
     // Method to toggle modal visibility
     showHowToFindPassword() {
-      this.showModal = true;
+      this.showModal = !this.showModal; // Toggle showModal property
     },
     // Method to close modal
     closeModal() {
@@ -116,6 +116,7 @@ export default {
   },
 }
 </script>
+
 
 
 
